@@ -1,196 +1,227 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Nome Cantina</title>
-
+    <title>Enoteca Divino | Eccellenze Enologiche</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome per le icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Personale -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-    <!-- NAVBAR -->
-    <header class="navbar">
-
-        <a href="index.html" class="logo">
-            NOME CANTINA
-        </a>
-
-        <nav>
-            <a href="#vini">I Vini</a>
-            <a href="#cantina">La Cantina</a>
-            <a href="#contatti">Contatti</a>
-        </nav>
-
+    <!-- Header & Navigazione -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="#" class="logo">DiVino<span>.</span></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#catalogo">I Nostri Vini</a></li>
+                    <li><a href="#storia">La Nostra Storia</a></li>
+                    <li><a href="#contatti">Contatti</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#contatti" class="btn-outline">Ordina Ora</a>
+            </div>
+            <button class="menu-toggle" aria-label="Apri menu"><i class="fa-solid fa-bars"></i></button>
+        </div>
     </header>
 
-
-    <!-- HERO -->
-    <section class="hero">
-
-        <div class="hero-content">
-
-            <p class="eyebrow">
-                VINI D'ITALIA
-            </p>
-
-            <h1>
-                Il vino racconta<br>
-                il nostro territorio.
-            </h1>
-
-            <p class="hero-description">
-                Passione, tradizione e cura racchiuse
-                in ogni bottiglia.
-            </p>
-
-            <a href="#vini" class="hero-button">
-                SCOPRI I NOSTRI VINI
-            </a>
-
+    <!-- Sezione Hero -->
+    <section id="home" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="subtitle">Tradizione e Passione in Ogni Calice</span>
+            <h1>L'eccellenza dei vini selezionati per voi</h1>
+            <p>Esplora la nostra cantina digitale: etichette pregiate, piccoli produttori e grandi classici direttamente sulla tua tavola.</p>
+            <div class="hero-buttons">
+                <a href="#catalogo" class="btn-primary">Scopri il Catalogo</a>
+                <a href="#storia" class="btn-secondary">La Nostra Filosofia</a>
+            </div>
         </div>
-
     </section>
 
+    <!-- Sezione Vetrina / Catalogo Vini -->
+    <section id="catalogo" class="catalog-section">
+        <div class="container">
+            <div class="section-title">
+                <span class="subtitle">Selezione Curata</span>
+                <h2>Le Nostre Migliori Etichette</h2>
+                <p>Una panoramica dei vini più amati dai nostri sommelier</p>
+            </div>
 
-    <!-- FILOSOFIA -->
-    <section id="cantina" class="philosophy">
+            <div class="grid-vini">
+                <!-- Prodotto 1 -->
+                <div class="wine-card">
+                    <div class="wine-badge">Riserva</div>
+                    <div class="wine-img-wrapper">
+                        <!-- Sostituisci l'immagine dentro la cartella images -->
+                        <img src="images/wine-red.jpg" alt="Barolo DOCG" onerror="this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80'">
+                    </div>
+                    <div class="wine-info">
+                        <span class="wine-type">Rosso • Piemonte</span>
+                        <h3>Barolo DOCG 2018</h3>
+                        <p class="wine-desc">Note di frutta rossa matura, cuoio e spezie dolci. Tannini vellutati e persistenti.</p>
+                        <div class="wine-footer">
+                            <span class="price">€ 45,00</span>
+                            <a href="#contatti" class="btn-card"><i class="fa-solid fa-cart-shopping"></i> Richiedi</a>
+                        </div>
+                    </div>
+                </div>
 
-        <p class="eyebrow">
-            LA NOSTRA FILOSOFIA
-        </p>
+                <!-- Prodotto 2 -->
+                <div class="wine-card">
+                    <div class="wine-badge bio">Biologico</div>
+                    <div class="wine-img-wrapper">
+                        <img src="images/wine-white.jpg" alt="Vermentino di Sardegna" onerror="this.src='https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?auto=format&fit=crop&w=600&q=80'">
+                    </div>
+                    <div class="wine-info">
+                        <span class="wine-type">Bianco • Sardegna</span>
+                        <h3>Vermentino di Sardegna DOC</h3>
+                        <p class="wine-desc">Fresco, sapido e minerale. Sentori di agrumi e macchia mediterranea.</p>
+                        <div class="wine-footer">
+                            <span class="price">€ 18,50</span>
+                            <a href="#contatti" class="btn-card"><i class="fa-solid fa-cart-shopping"></i> Richiedi</a>
+                        </div>
+                    </div>
+                </div>
 
-        <h2>
-            Dal vigneto alla bottiglia,
-            senza compromessi.
-        </h2>
-
-        <p>
-            Crediamo in una viticoltura capace di esprimere
-            il carattere autentico del territorio.
-            Ogni bottiglia nasce dalla cura della vigna,
-            dal rispetto della tradizione e dalla ricerca
-            della qualità.
-        </p>
-
+                <!-- Prodotto 3 -->
+                <div class="wine-card">
+                    <div class="wine-badge">Collezione</div>
+                    <div class="wine-img-wrapper">
+                        <img src="images/wine-sparkling.jpg" alt="Franciacorta" onerror="this.src='https://images.unsplash.com/photo-1594356499859-9a73841961e6?auto=format&fit=crop&w=600&q=80'">
+                    </div>
+                    <div class="wine-info">
+                        <span class="wine-type">Bollicine • Lombardia</span>
+                        <h3>Franciacorta Brut DOCG</h3>
+                        <p class="wine-desc">Perlage fine e persistente. Note di crosta di pane, mela verde e mandorla.</p>
+                        <div class="wine-footer">
+                            <span class="price">€ 32,00</span>
+                            <a href="#contatti" class="btn-card"><i class="fa-solid fa-cart-shopping"></i> Richiedi</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-
-    <!-- VINI -->
-    <section id="vini" class="wines">
-
-        <div class="section-title">
-
-            <p class="eyebrow">
-                LA NOSTRA SELEZIONE
-            </p>
-
-            <h2>
-                I nostri vini
-            </h2>
-
+    <!-- Sezione Storia / Filosofia -->
+    <section id="storia" class="story-section">
+        <div class="container story-grid">
+            <div class="story-text">
+                <span class="subtitle">La Nostra Passione</span>
+                <h2>Una vita dedicata all'arte dell'accoglienza e del buon bere</h2>
+                <p>Ogni bottiglia che selezioniamo racconta una storia fatta di terra, sole, mani esperte e rispetto per le tradizioni. Crediamo che il vino non sia semplicemente una bevanda, ma un'esperienza sensoriale capace di unire le persone e rendere unici i momenti speciali.</p>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <span>Piccoli produttori artigianali selezionati</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <span>Conservazione a temperatura controllata</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <span>Spedizioni sicure e curate nei dettagli</span>
+                    </div>
+                </div>
+            </div>
+            <div class="story-image">
+                <img src="images/vineyard.jpg" alt="La nostra cantina" onerror="this.src='https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=800&q=80'">
+            </div>
         </div>
-
-
-        <div class="wine-grid">
-
-            <article class="wine-card">
-
-                <div class="wine-image wine-red"></div>
-
-                <div class="wine-info">
-
-                    <p class="wine-type">
-                        ROSSO
-                    </p>
-
-                    <h3>
-                        Nome del Vino
-                    </h3>
-
-                    <p>
-                        Un rosso elegante e strutturato,
-                        espressione autentica del territorio.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="wine-card">
-
-                <div class="wine-image wine-white"></div>
-
-                <div class="wine-info">
-
-                    <p class="wine-type">
-                        BIANCO
-                    </p>
-
-                    <h3>
-                        Nome del Vino
-                    </h3>
-
-                    <p>
-                        Fresco, raffinato e luminoso,
-                        con delicate note floreali.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="wine-card">
-
-                <div class="wine-image wine-rose"></div>
-
-                <div class="wine-info">
-
-                    <p class="wine-type">
-                        ROSÉ
-                    </p>
-
-                    <h3>
-                        Nome del Vino
-                    </h3>
-
-                    <p>
-                        Delicato e fresco,
-                        perfetto per accompagnare ogni momento.
-                    </p>
-
-                </div>
-
-            </article>
-
-        </div>
-
     </section>
 
+    <!-- Sezione Contatti / Modulo -->
+    <section id="contatti" class="contact-section">
+        <div class="container">
+            <div class="section-title">
+                <span class="subtitle">Scrivici</span>
+                <h2>Vuoi ordinare o ricevere informazioni?</h2>
+                <p>Compila il modulo o contattaci direttamente. Ti risponderemo al più presto.</p>
+            </div>
 
-    <!-- FOOTER -->
-    <footer id="contatti">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <h4>Indirizzo</h4>
+                            <p>Via delle Vigne 14, 00100 Roma (RM)</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <h4>Telefono</h4>
+                            <p>+39 06 1234567</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>ordini@enotecadivino.it</p>
+                        </div>
+                    </div>
+                </div>
 
-        <h2>
-            NOME CANTINA
-        </h2>
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('Grazie per il tuo messaggio! Ti ricontatteremo presto.');">
+                    <div class="form-group">
+                        <input type="text" placeholder="Il tuo Nome" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="La tua Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="5" placeholder="Scrivi la tua richiesta o i vini a cui sei interessato..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%;">Invia Richiesta</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-        <p>
-            Vini dal cuore d'Italia
-        </p>
-
-        <p class="copyright">
-            © 2026 Nome Cantina
-        </p>
-
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <a href="#" class="logo">DiVino<span>.</span></a>
+                <p>Il punto di riferimento per gli amanti del buon vino e delle eccellenze enologiche italiane.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Link Rapidi</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#catalogo">Catalogo</a></li>
+                    <li><a href="#storia">Storia</a></li>
+                    <li><a href="#contatti">Contatti</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Seguici</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Enoteca DiVino. Tutti i diritti riservati. Progettato con cura per GitHub Pages.</p>
+        </div>
     </footer>
 
+    <!-- JavaScript Personale -->
+    <script src="js/main.js"></script>
 </body>
-
 </html>

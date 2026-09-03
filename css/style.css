@@ -1,6 +1,15 @@
-/* ========================================
-   RESET
-======================================== */
+/* --- CSS RESET & VARIABILI --- */
+:root {
+    --primary: #581825;       /* Bordeaux scuro / Marsala */
+    --primary-dark: #3a0e17;  /* Bordeaux profondo */
+    --accent: #c5a880;        /* Oro caldo / Bronzo */
+    --bg-color: #fcfbfa;      /* Crema chiarissimo */
+    --bg-alt: #f4f0ec;        /* Sabbia chiara per sezioni alternate */
+    --text-main: #2d2926;     /* Antracite scuro per leggibilità */
+    --text-muted: #6b6560;    /* Grigio caldo per sottotitoli */
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+}
 
 * {
     margin: 0;
@@ -13,372 +22,541 @@ html {
 }
 
 body {
-    font-family: Arial, sans-serif;
-    color: #26221f;
-    background: #f5f1e8;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
 }
 
+h1, h2, h3, h4, .logo {
+    font-family: 'Playfair Display', serif;
+}
 
-/* ========================================
-   NAVBAR
-======================================== */
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-.navbar {
-    position: absolute;
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* --- BOTTONI --- */
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: var(--transition);
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--white);
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.btn-secondary:hover {
+    background-color: var(--white);
+    color: var(--text-main);
+    border-color: var(--white);
+}
+
+.btn-outline {
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+/* --- HEADER --- */
+.site-header {
+    position: fixed;
     top: 0;
     left: 0;
-
     width: 100%;
+    background-color: rgba(252, 251, 250, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 1000;
+    padding: 1rem 0;
+}
 
+.nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    padding: 30px 60px;
-
-    z-index: 10;
-
-    color: white;
 }
 
 .logo {
-    color: white;
-    text-decoration: none;
-
-    font-family: Georgia, serif;
-    font-size: 22px;
-    letter-spacing: 4px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
 }
 
-nav {
+.logo span {
+    color: var(--accent);
+}
+
+.main-nav ul {
     display: flex;
-    gap: 40px;
+    gap: 2.5rem;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-
-    transition: opacity 0.3s;
+.main-nav a {
+    font-weight: 500;
+    color: var(--text-main);
+    transition: var(--transition);
 }
 
-nav a:hover {
-    opacity: 0.6;
+.main-nav a:hover {
+    color: var(--primary);
 }
 
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--primary);
+}
 
-/* ========================================
-   HERO
-======================================== */
-
-.hero {
-    min-height: 100vh;
-
+/* --- HERO SECTION --- */
+.hero-section {
+    position: relative;
+    height: 90vh;
+    background: url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
     display: flex;
     align-items: center;
-    justify-content: center;
-
     text-align: center;
+    color: var(--white);
+    margin-top: 70px;
+}
 
-    color: white;
-
-    background:
-        linear-gradient(
-            rgba(20, 15, 12, 0.45),
-            rgba(20, 15, 12, 0.55)
-        ),
-        url("../images/vineyard.jpg");
-
-    background-size: cover;
-    background-position: center;
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(45,41,38,0.5), rgba(88,24,37,0.75));
 }
 
 .hero-content {
-    max-width: 900px;
-    padding: 40px;
-}
-
-.eyebrow {
-    font-size: 11px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-
-    margin-bottom: 25px;
-}
-
-.hero h1 {
-    font-family: Georgia, serif;
-
-    font-size: clamp(45px, 7vw, 90px);
-
-    font-weight: normal;
-    line-height: 1.05;
-
-    margin-bottom: 30px;
-}
-
-.hero-description {
-    font-size: 18px;
-    line-height: 1.6;
-
-    max-width: 550px;
-
-    margin: 0 auto 40px;
-}
-
-.hero-button {
-    display: inline-block;
-
-    padding: 16px 30px;
-
-    border: 1px solid rgba(255,255,255,0.7);
-
-    color: white;
-    text-decoration: none;
-
-    font-size: 11px;
-    letter-spacing: 3px;
-
-    transition: all 0.3s;
-}
-
-.hero-button:hover {
-    background: white;
-    color: #26221f;
-}
-
-
-/* ========================================
-   PHILOSOPHY
-======================================== */
-
-.philosophy {
+    position: relative;
+    z-index: 2;
     max-width: 800px;
-
-    margin: auto;
-
-    padding: 140px 30px;
-
-    text-align: center;
+    margin: 0 auto;
 }
 
-.philosophy .eyebrow {
-    color: #927a4d;
+.subtitle {
+    display: inline-block;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
 }
 
-.philosophy h2 {
-    font-family: Georgia, serif;
-
-    font-size: 48px;
-    font-weight: normal;
-
+.hero-content h1 {
+    font-size: 3.5rem;
     line-height: 1.2;
-
-    margin-bottom: 35px;
+    margin-bottom: 1.5rem;
 }
 
-.philosophy > p:last-child {
-    font-size: 17px;
-
-    line-height: 1.8;
-
-    color: #655e57;
+.hero-content p {
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
 }
 
-
-/* ========================================
-   WINES
-======================================== */
-
-.wines {
-    padding: 100px 60px 140px;
-
-    background: #ebe5d8;
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
 }
 
+/* --- TITOLI SEZIONI --- */
 .section-title {
     text-align: center;
-
-    margin-bottom: 70px;
-}
-
-.section-title .eyebrow {
-    color: #927a4d;
+    margin-bottom: 4rem;
 }
 
 .section-title h2 {
-    font-family: Georgia, serif;
-
-    font-size: 55px;
-    font-weight: normal;
+    font-size: 2.5rem;
+    color: var(--primary-dark);
+    margin-top: 0.3rem;
 }
 
+.section-title p {
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+}
 
-/* ========================================
-   WINE GRID
-======================================== */
+/* --- CATALOGO VINI --- */
+.catalog-section {
+    padding: 6rem 0;
+    background-color: var(--bg-alt);
+}
 
-.wine-grid {
-    max-width: 1200px;
-
-    margin: auto;
-
+.grid-vini {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
 }
 
 .wine-card {
-    background: #f5f1e8;
-
-    transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease;
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    transition: var(--transition);
+    position: relative;
 }
 
 .wine-card:hover {
     transform: translateY(-8px);
-
-    box-shadow:
-        0 20px 40px rgba(0,0,0,0.12);
+    box-shadow: 0 15px 35px rgba(88, 24, 37, 0.1);
 }
 
-.wine-image {
-    height: 450px;
-
-    background-size: cover;
-    background-position: center;
+.wine-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--primary);
+    color: var(--white);
+    font-size: 0.75rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    z-index: 2;
+    font-weight: 500;
+    letter-spacing: 1px;
 }
 
-.wine-red {
-    background-image:
-        url("../images/wine-red.jpg");
+.wine-badge.bio {
+    background-color: #385e4c;
 }
 
-.wine-white {
-    background-image:
-        url("../images/wine-white.jpg");
+.wine-img-wrapper {
+    height: 280px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.wine-rose {
-    background-image:
-        url("../images/wine-rose.jpg");
+.wine-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.wine-card:hover .wine-img-wrapper img {
+    transform: scale(1.05);
 }
 
 .wine-info {
-    padding: 30px;
+    padding: 2rem;
 }
 
 .wine-type {
-    color: #927a4d;
-
-    font-size: 10px;
-    letter-spacing: 3px;
-
-    margin-bottom: 12px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
 }
 
 .wine-info h3 {
-    font-family: Georgia, serif;
-
-    font-size: 30px;
-    font-weight: normal;
-
-    margin-bottom: 15px;
+    font-size: 1.4rem;
+    color: var(--primary-dark);
+    margin: 0.5rem 0;
 }
 
-.wine-info p:last-child {
-    color: #70685f;
-
-    line-height: 1.6;
+.wine-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
 }
 
+.wine-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+}
 
-/* ========================================
-   FOOTER
-======================================== */
+.price {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary);
+}
 
-footer {
-    padding: 100px 30px;
+.btn-card {
+    background-color: var(--bg-alt);
+    color: var(--primary);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
 
+.btn-card:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+/* --- SEZIONE STORIA --- */
+.story-section {
+    padding: 7rem 0;
+    background-color: var(--bg-color);
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.story-text h2 {
+    font-size: 2.3rem;
+    color: var(--primary-dark);
+    margin: 0.5rem 0 1.5rem 0;
+}
+
+.story-text p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 500;
+}
+
+.feature-item i {
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+.story-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+/* --- CONTATTI --- */
+.contact-section {
+    padding: 7rem 0;
+    background-color: var(--bg-alt);
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    background: var(--white);
+    border-radius: 16px;
+    padding: 4rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.info-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-top: 0.2rem;
+}
+
+.info-item h4 {
+    font-size: 1.1rem;
+    color: var(--primary-dark);
+    margin-bottom: 0.2rem;
+}
+
+.info-item p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border: 1px solid #e0dbd5;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: var(--bg-color);
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background-color: var(--white);
+}
+
+/* --- FOOTER --- */
+.site-footer {
+    background-color: var(--primary-dark);
+    color: var(--white);
+    padding: 4rem 0 2rem 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-col .logo {
+    color: var(--white);
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.footer-col p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+}
+
+.footer-col h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    color: var(--accent);
+}
+
+.footer-col ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-col ul a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: var(--transition);
+}
+
+.footer-col ul a:hover {
+    color: var(--white);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.footer-bottom {
     text-align: center;
-
-    background: #201c19;
-
-    color: #f5f1e8;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
 }
 
-footer h2 {
-    font-family: Georgia, serif;
-
-    font-size: 32px;
-    font-weight: normal;
-
-    letter-spacing: 5px;
-
-    margin-bottom: 15px;
-}
-
-footer p {
-    color: #b8afa4;
-}
-
-.copyright {
-    margin-top: 60px;
-
-    font-size: 11px;
-
-    letter-spacing: 2px;
-}
-
-
-/* ========================================
-   MOBILE
-======================================== */
-
-@media (max-width: 800px) {
-
-    .navbar {
-        padding: 25px 20px;
-    }
-
-    nav {
-        gap: 15px;
-    }
-
-    nav a {
-        font-size: 9px;
-    }
-
-    .hero h1 {
-        font-size: 50px;
-    }
-
-    .philosophy {
-        padding: 100px 25px;
-    }
-
-    .philosophy h2 {
-        font-size: 38px;
-    }
-
-    .wines {
-        padding: 80px 20px;
-    }
-
-    .wine-grid {
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 968px) {
+    .story-grid,
+    .contact-wrapper,
+    .footer-content {
         grid-template-columns: 1fr;
+        gap: 2.5rem;
     }
 
-    .wine-image {
-        height: 500px;
+    .contact-wrapper {
+        padding: 2rem;
     }
 
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .main-nav {
+        display: none; /* Da gestire eventualmente con JS per un menu mobile */
+    }
+
+    .menu-toggle {
+        display: block;
+    }
 }
