@@ -1,0 +1,384 @@
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #26221f;
+    background: #f5f1e8;
+}
+
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 30px 60px;
+
+    z-index: 10;
+
+    color: white;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+
+    font-family: Georgia, serif;
+    font-size: 22px;
+    letter-spacing: 4px;
+}
+
+nav {
+    display: flex;
+    gap: 40px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    transition: opacity 0.3s;
+}
+
+nav a:hover {
+    opacity: 0.6;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(20, 15, 12, 0.45),
+            rgba(20, 15, 12, 0.55)
+        ),
+        url("../images/vineyard.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 900px;
+    padding: 40px;
+}
+
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(45px, 7vw, 90px);
+
+    font-weight: normal;
+    line-height: 1.05;
+
+    margin-bottom: 30px;
+}
+
+.hero-description {
+    font-size: 18px;
+    line-height: 1.6;
+
+    max-width: 550px;
+
+    margin: 0 auto 40px;
+}
+
+.hero-button {
+    display: inline-block;
+
+    padding: 16px 30px;
+
+    border: 1px solid rgba(255,255,255,0.7);
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 11px;
+    letter-spacing: 3px;
+
+    transition: all 0.3s;
+}
+
+.hero-button:hover {
+    background: white;
+    color: #26221f;
+}
+
+
+/* ========================================
+   PHILOSOPHY
+======================================== */
+
+.philosophy {
+    max-width: 800px;
+
+    margin: auto;
+
+    padding: 140px 30px;
+
+    text-align: center;
+}
+
+.philosophy .eyebrow {
+    color: #927a4d;
+}
+
+.philosophy h2 {
+    font-family: Georgia, serif;
+
+    font-size: 48px;
+    font-weight: normal;
+
+    line-height: 1.2;
+
+    margin-bottom: 35px;
+}
+
+.philosophy > p:last-child {
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: #655e57;
+}
+
+
+/* ========================================
+   WINES
+======================================== */
+
+.wines {
+    padding: 100px 60px 140px;
+
+    background: #ebe5d8;
+}
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 70px;
+}
+
+.section-title .eyebrow {
+    color: #927a4d;
+}
+
+.section-title h2 {
+    font-family: Georgia, serif;
+
+    font-size: 55px;
+    font-weight: normal;
+}
+
+
+/* ========================================
+   WINE GRID
+======================================== */
+
+.wine-grid {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+.wine-card {
+    background: #f5f1e8;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.wine-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.12);
+}
+
+.wine-image {
+    height: 450px;
+
+    background-size: cover;
+    background-position: center;
+}
+
+.wine-red {
+    background-image:
+        url("../images/wine-red.jpg");
+}
+
+.wine-white {
+    background-image:
+        url("../images/wine-white.jpg");
+}
+
+.wine-rose {
+    background-image:
+        url("../images/wine-rose.jpg");
+}
+
+.wine-info {
+    padding: 30px;
+}
+
+.wine-type {
+    color: #927a4d;
+
+    font-size: 10px;
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+.wine-info h3 {
+    font-family: Georgia, serif;
+
+    font-size: 30px;
+    font-weight: normal;
+
+    margin-bottom: 15px;
+}
+
+.wine-info p:last-child {
+    color: #70685f;
+
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    padding: 100px 30px;
+
+    text-align: center;
+
+    background: #201c19;
+
+    color: #f5f1e8;
+}
+
+footer h2 {
+    font-family: Georgia, serif;
+
+    font-size: 32px;
+    font-weight: normal;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: #b8afa4;
+}
+
+.copyright {
+    margin-top: 60px;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        padding: 25px 20px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 9px;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .philosophy {
+        padding: 100px 25px;
+    }
+
+    .philosophy h2 {
+        font-size: 38px;
+    }
+
+    .wines {
+        padding: 80px 20px;
+    }
+
+    .wine-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wine-image {
+        height: 500px;
+    }
+
+}
