@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const modal = document.getElementById('wineModal');
     const modalClose = modal.querySelector('.modal-close');
-    const openButtons = document.querySelectorAll('.open-detail');
+    const openButtons = document.querySelectorAll('.wine-card');
 
     // Funzione per aprire la modale con i dati del vino scelto
     openButtons.forEach(button => {
