@@ -560,3 +560,132 @@ ul {
         display: block;
     }
 }
+
+/* --- STILE MODALE DETTAGLI VINO --- */
+.wine-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    padding: 1rem;
+}
+
+.wine-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.wine-modal-content {
+    background: var(--white);
+    width: 100%;
+    max-width: 900px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.wine-modal-overlay.active .wine-modal-content {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--bg-alt);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+}
+
+.modal-close:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.modal-img-container {
+    background-color: #f9f9f9;
+    height: 100%;
+    min-height: 350px;
+}
+
+.modal-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-details {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal-details h2 {
+    font-size: 2rem;
+    color: var(--primary-dark);
+    margin: 0.3rem 0 1rem 0;
+}
+
+.modal-specs {
+    background: var(--bg-alt);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    border-top: 1px solid #eee;
+    padding-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .modal-grid {
+        grid-template-columns: 1fr;
+    }
+    .modal-img-container {
+        height: 250px;
+        min-height: 250px;
+    }
+    .modal-details {
+        padding: 1.5rem;
+    }
+}
